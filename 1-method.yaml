@@ -1,0 +1,44 @@
+openapi: 3.0.3
+info:
+  title: OpenAPI Studio CLI API
+  version: 1.0.0
+servers:
+  - url: http://localhost:{port}
+    variables:
+      port:
+        default: "8080"
+        description: The port number the CLI server is running on
+paths:
+  /v1/apis/{apiID}/version/{versionID}/generate/openapi:
+    get:
+      summary: Generate an OpenAPI specification for a particular Api.
+      description: |-
+        This endpoint will generate any missing operations in any registered OpenAPI document if the operation does not already exist in the document.
+        Returns the original document and the newly generated document allowing a diff to be performed to see what has changed.
+      operationId: generateOpenApiSpec
+      parameters:
+        - description: The ID of the Api to generate an OpenAPI specification for.
+          in: path
+          name: apiID
+          required: true
+          schema:
+            type: string
+        - description: The version ID of the Api to generate an OpenAPI specification for.
+          in: path
+          name: versionID
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/GenerateOpenApiSpecDiff"
+          description: OK
+        default:
+          $ref: "#/components/responses/default"
+      tags:
+      x-speakeasy-name-override: generateOpenApi
+        - Apis
+      x-speakeasy-group: apis
