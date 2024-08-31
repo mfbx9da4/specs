@@ -34,7 +34,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/GenerateOpenApiSpecDiff"
+                type: object
           description: OK
         default:
           $ref: "#/components/responses/default"
