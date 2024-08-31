@@ -36,8 +36,6 @@ paths:
               schema:
                 type: object
           description: OK
-        default:
-          $ref: "#/components/responses/default"
       tags:
       x-speakeasy-name-override: generateOpenApi
         - Apis
