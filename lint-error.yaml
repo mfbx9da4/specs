@@ -1,6 +1,6 @@
 openapi: 3.0.3
 info:
-  title: OpenAPI Studio CLI API
+  title: Test
   version: 1.0.0
 servers:
   - url: http://localhost:{port}
@@ -34,10 +34,8 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/GenerateOpenApiSpecDiff"
+                type: object
           description: OK
-        default:
-          $ref: "#/components/responses/default"
       tags:
       x-speakeasy-name-override: generateOpenApi
         - Apis
