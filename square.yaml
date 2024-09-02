@@ -69344,7 +69344,3 @@ paths:
       responses:
         '200':
           description: Success
-          content:
-            application/json:
-                "$ref": "#/components/schemas/TestWebhookSubscriptionResponse"
-              schema:
