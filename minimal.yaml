@@ -1,0 +1,17 @@
+openapi: 3.1.0
+info:
+  title: Petstore - OpenAPI 3.1
+  version: '0.0.1'
+servers:
+  - url: https://environment.petstore.io
+paths:
+  "/pet":
+    post:
+      operationId: addPet
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
